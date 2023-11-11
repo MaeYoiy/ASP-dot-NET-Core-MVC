@@ -13,6 +13,7 @@ namespace BasicASPTutorial.Controllers
             _logger = logger;
         }
 
+        //return Views
         public IActionResult Index()
         {
             return View();

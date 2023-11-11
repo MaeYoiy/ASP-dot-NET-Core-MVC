@@ -13,15 +13,21 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+//กำหนดตัวโปรเจครันเป็นรูปแบบ https
 app.UseHttpsRedirection();
+//มีการเรียกใช้ static file
 app.UseStaticFiles();
 
+//มีการใช้ routing
 app.UseRouting();
 
+//มีการกำหนดสิทธิ์ที่ใช้ในการจัดการตัวโปรเจค
 app.UseAuthorization();
 
+//มีการ map จับคู่ชื่อ controller กับคู่ เส้นทาง
+//HomeController มีการเรียกใช้ action method ที่ชื่อว่า Index
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Student}/{action=Index}/{id?}");
 
 app.Run();
