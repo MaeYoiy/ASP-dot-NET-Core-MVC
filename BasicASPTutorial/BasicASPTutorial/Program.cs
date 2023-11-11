@@ -1,7 +1,11 @@
+using BasicASPTutorial.Data;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//เพิ่ม service เชื่อมต่อกับฐานข้อมูล sql server ผ่าย ApplicationDBContext
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
