@@ -1,10 +1,20 @@
-﻿using BasicASPTutorial.Models;
+﻿using BasicASPTutorial.Data;
+using BasicASPTutorial.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BasicASPTutorial.Controllers
 {
+    //Constructor
     public class StudentController : Controller
     {
+        private readonly ApplicationDBContext _db;
+
+        //Constructor
+        //Dependency Injection
+        public StudentController(ApplicationDBContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index()
         {
             //รูปแบบที่ 1
@@ -37,10 +47,13 @@ namespace BasicASPTutorial.Controllers
 
         }
 
+        //GET METHOD รับหน้าที่ในการแสดงผล
         public IActionResult Create()
         {
             return View();
         }
+
+        //POST METHOD รับหน้าที่ในการข้อมูลจาก View มาใช้ใน Controller
 
         
     }
