@@ -11,7 +11,7 @@ namespace BasicASPTutorial.Data
 
         }
 
-        //เข้าถึงฐานข้อมูล Student ด้วย Students ตัวด้านล่างนี้
+        //เข้าถึงฐานข้อมูล Student ด้วย Students ตัวด้านล่างนี้ หรือช่วยแปลง Model เป็นตาราง
         public DbSet<Student> Students { get; set; }
     }
 }
